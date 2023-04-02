@@ -1,0 +1,23 @@
+<html xmlns:th="https://thymeleaf.org">
+
+<h1 style="color: red; text-align: center">Login Page
+	Page</h1>
+<form th:action="@{/login}" method="POST">
+	<table border="0" align="center">
+		<tr>
+			<td>UserName</td>
+			<td><input type="text" name="username"></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="text" name="password"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Login"></td>
+			<td><input type="submit" value="Reset"></td>
+		</tr>
+
+	</table>
+	<span style="text-color:red" th:if="${param.error}">Invalid Crendential</span>
+	<span style="text-color:red" th:if="${param.logout}">User LogOut  Successfully</span>
+</form>
